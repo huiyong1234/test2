@@ -1,15 +1,38 @@
-1. 저장소 생성
+1. 깃 다운로드, 깃허브 생성
+mac일 경우 homebrew 설치 후 터미널에 brew install git 입력 후
+git config --global init.defaultBranch main 입력 # 기본 브랜치 이름을 master 에서 main으로 바꿔주는 것
+
+1.1 기본 에디터 설정 # 내가 이걸 했는지 기억이 잘 안남
+vscode -> shift + command + p 누르고
+install "code" from VSCode commander 검색해서 누르기
+다시 터미널에서 git config --global core.editor "code --wait" 입력하면
+기본 에디터가 Vim -> vscode로 변경.
+
+1.2 여기까지 잘 했나 테스트
+작업 폴더를 만들고 작업 폴더에 우클릭해서 터미널을 열고 
+git --version 입력해서 버전이 나오면 성공
+
+2. git user 세팅
+터미널에 
+git config --global user name.email "abcd@naver.com"
+git config --global user name.name "정희용"
+입력 후 닫기
+
+3. 저장소 생성
 깃허브에서 새로운 Repositories를 만든다.
 
-2. 저장소 설치
-링크를 공유하고 새로운 폴더의 Power Shell을 연다.
-git clone http://~~ 식으로 git clone 뒤에 붙여넣기 한다.
+4. 저장소 설치
+링크(~~.git 형식)를 복사하고 새로운 폴더의 Power Shell을 연다.
+git clone http://~~.git 식으로 git clone 뒤에 붙여넣기 한다.
 자동으로 폴더안에 Repositories의 이름으로된 폴더가 생긴다.
 이 폴더에서 숨김파일 보기를 하면 .git 이라는 폴더가 있는데 이게 있어야
 git 에서 폴더를 관리할 수 있다.
 
 3.파일 수정
 vscode 에서 새로 생긴 폴더에 파일을 만들고 소스 컨트롤에서 관리할 수 있다.
+터미널에서 
+git add .                << 파일 모두 선택
+git commit -m '메세지'     << 선택된 파일 커밋
 
 4. git 업로드
 vscode 에서 수정한 파일을 저장하면 소스 컨트롤에서 수정된 파일의 개수가 나타난다.
@@ -19,6 +42,8 @@ vscode 에서 수정한 파일을 저장하면 소스 컨트롤에서 수정된 
 후 커밋 버튼을 누른다. 
 여기까지는 변경사항 및 파일을 내 컴퓨터에 저장한 것이다.
 여기서 소스 컨트롤의 메뉴(...)을 눌러 푸시를 누른다.
+또는 터미널에 git push -u https://github.com/huiyong1234/test2.git main 입력
+추후에 push할 떄는 -u 를 통해 링크를 기억하도록 했으니 git push 만 입력하면 깃허브에 업로드된다.
 
 5. 확인
 깃허브에 들어가서 파일이 재대로 업로드 되었는지 확인한다.
